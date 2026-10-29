@@ -11,10 +11,9 @@ A beginner-friendly static web prototype adapted from the original FixMyCity civ
 - Responsive layout for laptop and mobile.
 
 ## Run it
-1. Extract the ZIP.
-2. Open this folder in VS Code.
-3. Open `index.html` in a browser, or use the Live Server extension.
-4. Try joining a group, marking interest in a meetup, and creating your own meetup.
+1. Open this folder in VS Code.
+2. Open `index.html` in a browser, or use the Live Server extension.
+3. Try joining a group, marking interest in a meetup, and creating your own meetup.
 
 ## Important limitations
 - This is a frontend demo. It does not have accounts, verified identities, messaging, a real location service, a backend database, or moderation.
