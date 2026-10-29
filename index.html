@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Find neighbors who care about the same things. Join local groups, meet people, and make your neighborhood better together." />
+  <title>FixMyCity Connect | Find Your People</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#home"><span class="brand-mark">F</span><span>FixMyCity <span class="brand-dot">Connect</span></span></a>
+    <nav>
+      <a href="#discover">Discover</a>
+      <a href="#events">Meetups</a>
+      <a href="#groups">My groups</a>
+      <a class="nav-cta" href="#create">+ Create a meetup</a>
+    </nav>
+  </header>
+
+  <main class="container" id="home">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="live-dot"></span> YOUR NEIGHBORHOOD, CLOSER</p>
+        <h1>Find your people.<br><span>Make things better.</span></h1>
+        <p class="hero-text">Meet neighbors who share your interests, join local groups, and turn small shared passions into real-world community action.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#discover">Explore communities <span>↗</span></a>
+          <a class="button button-secondary" href="#create">Host a meetup</a>
+        </div>
+        <div class="trust-line"><span class="avatar-stack"><i>D</i><i>A</i><i>O</i></span><span><b id="memberCount">240+</b> neighbors building connections</span></div>
+      </div>
+      <div class="hero-art" aria-label="Illustration of neighbors connecting">
+        <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+        <div class="art-person person-one">D</div><div class="art-person person-two">A</div>
+        <div class="art-person person-three">O</div><div class="art-person person-four">M</div>
+        <div class="art-center"><span>✦</span><b>Good things<br>happen together</b></div>
+        <div class="floating-tag tag-one">🌱 Clean-up crew</div><div class="floating-tag tag-two">🎨 Creative circle</div>
+      </div>
+    </section>
+
+    <section class="section stats-grid" aria-label="Community statistics">
+      <article class="stat-card"><span class="stat-icon blue">◎</span><p>Local communities</p><strong id="groupCount">6</strong><small>Find people with shared interests</small></article>
+      <article class="stat-card"><span class="stat-icon amber">♧</span><p>Upcoming meetups</p><strong id="eventCount">4</strong><small>Turn online connection into real life</small></article>
+      <article class="stat-card"><span class="stat-icon purple">♡</span><p>People connected</p><strong id="joinedCount">128</strong><small>And growing, one hello at a time</small></article>
+    </section>
+
+    <section id="discover" class="section">
+      <div class="section-heading">
+        <div><p class="eyebrow">START WITH WHAT YOU LOVE</p><h2>Discover your community</h2><p class="section-subtitle">Choose a group that feels like you. You can join or leave any time.</p></div>
+        <div class="search-wrap"><label class="sr-only" for="groupSearch">Search communities</label><input id="groupSearch" type="search" placeholder="Search interests..." /></div>
+      </div>
+      <div class="chips" id="categoryChips">
+        <button class="chip active" data-category="All">All interests</button>
+        <button class="chip" data-category="Environment">Environment</button>
+        <button class="chip" data-category="Learning">Learning</button>
+        <button class="chip" data-category="Creativity">Creativity</button>
+        <button class="chip" data-category="Wellbeing">Wellbeing</button>
+        <button class="chip" data-category="Volunteering">Volunteering</button>
+      </div>
+      <div id="groupGrid" class="group-grid"></div>
+      <p id="noGroups" class="empty-state" hidden>No communities match that search. Try another interest.</p>
+    </section>
+
+    <section id="events" class="section">
+      <div class="section-heading">
+        <div><p class="eyebrow">SAY HELLO OFFLINE</p><h2>Meetups near you</h2><p class="section-subtitle">Friendly, low-pressure ways to meet people and do something together.</p></div>
+      </div>
+      <div id="eventGrid" class="event-grid"></div>
+    </section>
+
+    <section id="groups" class="section joined-section">
+      <div class="section-heading"><div><p class="eyebrow">YOUR PEOPLE, IN ONE PLACE</p><h2>Communities you joined</h2><p class="section-subtitle">Your joined groups appear here.</p></div></div>
+      <div id="joinedGrid" class="joined-grid"></div>
+      <p id="noJoined" class="empty-state">You haven't joined a community yet. Explore the groups above to get started.</p>
+    </section>
+
+    <section id="create" class="section create-layout">
+      <div class="section-intro">
+        <p class="eyebrow">BRING PEOPLE TOGETHER</p><h2>Host a neighborhood meetup</h2>
+        <p>Have an idea for a walk, book club, clean-up, game night, or skill swap? Invite neighbors to join you.</p>
+        <div class="tip-box"><span>✦</span><p><b>Keep it welcoming</b><br>Choose a public place, describe who might enjoy it, and make first-timers feel included.</p></div>
+      </div>
+      <form id="eventForm" class="event-form">
+        <label for="eventTitle">Meetup name</label>
+        <input id="eventTitle" name="title" maxlength="80" placeholder="e.g. Sunday morning park clean-up" required />
+        <div class="form-row">
+          <div><label for="eventCategory">Interest</label><select id="eventCategory" name="category"><option>Environment</option><option>Learning</option><option>Creativity</option><option>Wellbeing</option><option>Volunteering</option><option>Social</option></select></div>
+          <div><label for="eventDate">Date</label><input id="eventDate" name="date" type="date" required /></div>
+        </div>
+        <label for="eventPlace">Meeting place</label><input id="eventPlace" name="place" maxlength="100" placeholder="e.g. Central Park entrance" required />
+        <label for="eventDescription">What will you do?</label><textarea id="eventDescription" name="description" rows="3" maxlength="300" placeholder="Tell people what to expect..." required></textarea>
+        <button class="button button-primary submit-button" type="submit">Create meetup <span>→</span></button>
+        <p id="formMessage" class="form-message" role="status"></p>
+      </form>
+    </section>
+
+    <section class="bottom-cta"><div><p class="eyebrow">A LITTLE MORE HUMAN</p><h2>Connection starts with one small hello.</h2><p>Find shared interests, make a plan, and help your neighborhood feel more like home.</p></div><a class="button button-light" href="#discover">Find your people <span>↗</span></a></section>
+  </main>
+
+  <footer><a class="brand footer-brand" href="#home"><span class="brand-mark">F</span><span>FixMyCity <span class="brand-dot">Connect</span></span></a><p>Built for AFFECIO HACKS ’26 · Community connection prototype</p><p class="footer-small">Demo version: data is saved in this browser only. Meetups and members are illustrative, not verified real-world listings.</p></footer>
+  <script src="app.js"></script>
+</body>
+</html>
